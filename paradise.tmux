@@ -8,7 +8,6 @@
 # email: contact.ocampo.info@gmail.com                                 +
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#
 
-  local option value default
   get_tmux_option() {
   option="$1"
   default="$2"
