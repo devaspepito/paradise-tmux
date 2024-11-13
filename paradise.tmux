@@ -8,8 +8,8 @@
 # email: contact.ocampo.info@gmail.com                                 +
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#
 
-get_tmux_option() {
   local option value default
+  get_tmux_option() {
   option="$1"
   default="$2"
   value="$(tmux show-option -gqv "$option")"
@@ -21,11 +21,11 @@ get_tmux_option() {
   fi
 }
 
-default_color="#[bg=default,fg=#8B8989,bold]"
+default_color="#[bg=default,fg=#8B8989,bold]" # foreground is black-04 of my repo called color-palletes
 
 # variables
-bg=$(get_tmux_option "@paradise-tmux-bg" '#8DA3B9') # background blue-base of my repo called color-palletes
-fg=$(get_tmux_option "@paradise-tmux-fg" '#151515') # background black-base of my repo called color-palletes
+bg=$(get_tmux_option "@paradise-tmux-bg" '#42766F') # background cyan-01 of my repo called color-palletes
+fg=$(get_tmux_option "@paradise-tmux-fg" '#151515, bold') # background black-base of my repo called color-palletes
 
 
 use_circle=$(get_tmux_option "@paradise-tmux-use-half-circle" true)
@@ -42,19 +42,19 @@ indicator=$("$indicator_state" && echo " $indicator_str ")
 right_state=$(get_tmux_option "@paradise-tmux-right" true)
 left_state=$(get_tmux_option "@paradise-tmux-left" true)
 
-status_right=$("$right_state" && get_tmux_option "@paradise-tmux-status-right" "#I*#S  󰸘 :%D")
+status_right=$("$right_state" && get_tmux_option "@paradise-tmux-status-right" "#S  󰸘 :%D")
 status_left=$("$left_state" && get_tmux_option "@paradise-tmux-status-left" "${default_color}#{?client_prefix,,${indicator}}#[bg=${bg},fg=${fg},bold]#{?client_prefix,${indicator},}${default_color}")
 status_right_extra="$status_right$(get_tmux_option "@paradise-tmux-status-right-extra" "")"
 status_left_extra="$status_left$(get_tmux_option "@paradise-tmux-status-left-extra" "")"
 
-window_status_format=$(get_tmux_option "@paradise-tmux-window-status-format" ' #W ')
+window_status_format=$(get_tmux_option "@paradise-tmux-window-status-format" ' #I:#W ')
 
 expanded_icon=$(get_tmux_option "@paradise-tmux-expanded-icon" ' ')
 show_expanded_icon_all_tabs=$(get_tmux_option "@paradise-tmux-show-expanded-icon-all-tabs" false)
 
 # Setting the options in tmux
 tmux set-option -g status-position "$status"
-tmux set-option -g status-style bg=default,fg=#8B8989
+tmux set-option -g status-style bg=default,fg=#8B8989 # foreground is black-04 of my repo called color-palletes
 tmux set-option -g status-justify "$justify"
 
 tmux set-option -g status-left "$status_left_extra"
