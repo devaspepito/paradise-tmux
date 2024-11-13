@@ -28,8 +28,8 @@ fg=$(get_tmux_option "@paradise-tmux-fg" '#151515, bold') # background black-bas
 
 
 use_circle=$(get_tmux_option "@paradise-tmux-use-half-circle" true)
-lcircle="$("$use_circle" && get_tmux_option "@paradise-tmux-half-circle-left-arrow" "")"
-rcircle="$("$use_circle" && get_tmux_option "@paradise-tmux-half-circle-right-arrow" "")"
+lcircle="$("$use_circle" && get_tmux_option "@paradise-tmux-half-circle-left" "")"
+rcircle="$("$use_circle" && get_tmux_option "@paradise-tmux-half-circle-right" "")"
 
 status=$(get_tmux_option "@paradise-tmux-status" "top")
 justify=$(get_tmux_option "@paradise-tmux-justify" "centre")
@@ -81,7 +81,7 @@ tmux set-option -g window-status-current-format "#[fg=${bg}]$lcircle#[bg=${bg},f
 # - @paradise-tmux-status-left-extra: extra content of the left side of the status line
 # - @paradise-tmux-window-status-format: format of the window status
 # - @paradise-tmux-expanded-icon: icon for expanded windows
-# - @paradise-tmux-show-expanded-icon-for-all-tabs: whether to show the expanded icon for all tabs
+# - @paradise-tmux-show-expanded-icon-all-tabs: whether to show the expanded icon for all tabs
 # - @paradise-tmux-use-half-circle: whether to use arrows in the status line
-# - @paradise-tmux-right-arrow: right arrow symbol
-# - @paradise-tmux-left-arrow: right left symbol
+# - @paradise-tmux-half-circle-right: right half circle symbol
+# - @paradise-tmux-half-circle-left: left half circle symbol
