@@ -23,7 +23,7 @@
 default_color="#[bg=default,fg=#8B8989,bold]" # foreground is black-04 of my repo called color-palletes
 
 # variables
-bg=$(get_tmux_option "@paradise-tmux-bg" '#42766F') # background cyan-01 of my repo called color-palletes
+bg=$(get_tmux_option "@paradise-tmux-bg" '#607E9A') # background cyan-01 of my repo called color-palletes
 fg=$(get_tmux_option "@paradise-tmux-fg" '#151515, bold') # background black-base of my repo called color-palletes
 
 
