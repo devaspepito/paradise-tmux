@@ -20,10 +20,10 @@
   fi
 }
 
-default_color="#[bg=default,fg=#8B8989,bold]" # foreground is black-04 of my repo called color-palletes
+default_color="#[bg=default,fg=#8AA6A2,bold]" # foreground is cyan-base of my repo called color-palletes
 
 # variables
-bg=$(get_tmux_option "@paradise-tmux-bg" '#607E9A') # background cyan-01 of my repo called color-palletes
+bg=$(get_tmux_option "@paradise-tmux-bg" '#607E9A') # background blue-02 of my repo called color-palletes
 fg=$(get_tmux_option "@paradise-tmux-fg" '#151515, bold') # background black-base of my repo called color-palletes
 
 
@@ -53,7 +53,7 @@ show_expanded_icon_all_tabs=$(get_tmux_option "@paradise-tmux-show-expanded-icon
 
 # Setting the options in tmux
 tmux set-option -g status-position "$status"
-tmux set-option -g status-style bg=default,fg=#8B8989 # foreground is black-04 of my repo called color-palletes
+tmux set-option -g status-style bg=default,fg=#8AA6A2 # foreground is cyan-base of my repo called color-palletes
 tmux set-option -g status-justify "$justify"
 
 tmux set-option -g status-left "$status_left_extra"
